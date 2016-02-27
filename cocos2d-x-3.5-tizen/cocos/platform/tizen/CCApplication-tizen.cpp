@@ -314,7 +314,8 @@ static bool app_create(void *data) {
     GLContextAttrs attrs = GLView::getGLContextAttrs();
     char gl_mode[100] = "";
     get_glview_mode(attrs, gl_mode);
-    elm_config_accel_preference_set(gl_mode);
+    //elm_config_accel_preference_set(gl_mode);
+	elm_config_accel_preference_set("opengl");
     /* Create the window */
     ad->_win = add_win("cocos2d-x");
 
@@ -440,8 +441,8 @@ static void app_terminate(void *data)
         return;
     }
     stopAccelerometerSensor();
-    Application* app = ((Application *)data);
-    delete app;
+    //Application* app = ((Application *)data);
+    //delete app;
 }
 
 static void app_control(app_control_h app_control, void *data)
