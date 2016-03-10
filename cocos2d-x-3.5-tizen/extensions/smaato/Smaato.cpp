@@ -120,9 +120,24 @@ void Smaato::updateUI(char* target, ccSprite* imageSprite) {
 	ccSetPosition(imageSprite, size.width / 2, size.height / 2);
 	this->addChild(imageSprite, 2);
 	if (closeSprite) {
-		ccSetPosition(closeSprite,
-				size.width / 2 + imageSprite->getContentSize().width / 2,
-				size.height / 2 + imageSprite->getContentSize().height / 2);
+		int width =
+				size.width / 2 + imageSprite->getContentSize().width / 2
+						+ closeSprite->getContentSize().width / 2 > size.width ?
+						(size.width / 2
+								+ imageSprite->getContentSize().width / 2
+								- closeSprite->getContentSize().width / 2) :
+						(size.width / 2
+								+ imageSprite->getContentSize().width / 2);
+		int height =
+				size.height / 2 + imageSprite->getContentSize().height / 2
+						+ closeSprite->getContentSize().height / 2
+						> size.height ?
+						(size.height / 2
+								+ imageSprite->getContentSize().height / 2
+								- closeSprite->getContentSize().height / 2) :
+						(size.height / 2
+								+ imageSprite->getContentSize().height / 2);
+		ccSetPosition(closeSprite, width, height);
 	}
 	if (show) {
 		ccSetVisible(this, true);
@@ -146,7 +161,7 @@ void Smaato::updateUI(char* target, ccSprite* imageSprite) {
 				imageSprite->getContentSize().width + 10,
 				imageSprite->getContentSize().height + 10);
 		ccSetTextureRect(blackBorder, rect, false, untrimmedSize);
-		ccSetPosition(blackBorder,size.width / 2, size.height / 2);
+		ccSetPosition(blackBorder, size.width / 2, size.height / 2);
 		blackBorder->setColor(borderColor1);
 
 	}

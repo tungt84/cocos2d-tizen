@@ -38,7 +38,7 @@ void Smaato::openUrl(const char* target){
 	app_control_create(&app_control);
 	app_control_set_operation(app_control, APP_CONTROL_OPERATION_VIEW);
 	app_control_set_uri(app_control, target);
-	app_control_set_mime(app_control,"text/html");
+	app_control_set_mime(app_control,"application/xhtml+xml");
 	//app_control_set_app_id(app_control,"com.samsung.browser");
 	int rs =0;
 	rs =app_control_send_launch_request(app_control, app_control_result, NULL);

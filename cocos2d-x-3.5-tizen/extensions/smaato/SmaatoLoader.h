@@ -30,7 +30,14 @@ using namespace cocos2d::network;
 #define ADS_TAG 10201
 #define ADS_OZDER 10
 
-#define DEGUG_SMA 1
+
+#if USING_COCOS2D_VERSION == COCOS2D_VERSION_1X
+#define ccSmaatoCreate() cocos2d::Smaato::node()
+#endif
+
+#if USING_COCOS2D_VERSION == COCOS2D_VERSION_3X
+#define ccSmaatoCreate() cocos2d::Smaato::create()
+#endif
 NS_CC_BEGIN
     enum AdsStatus
     {
@@ -80,6 +87,8 @@ NS_CC_BEGIN
         char* device;
         SmaatoFormat format;
         SmaatoDimension dimension;
+        SmaatoDimension* supportedDimension;
+        int numberOfSupportDimension;
 
     };
     class SmaatoAdsRequestCallback: public Ref
