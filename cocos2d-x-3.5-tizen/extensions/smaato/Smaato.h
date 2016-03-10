@@ -10,9 +10,9 @@
 #include "cocos2d.h"
 #include "extensions/HttpClientHelper.h"
 #include <string>
-#include <extensions/pugixml/pugixml.hpp>
+#include "extensions/pugixml/pugixml.hpp"
 
-#include <platform/CCImage.h>
+#include "platform/CCImage.h"
 
 
 #include <pthread.h>
@@ -74,38 +74,24 @@ NS_CC_BEGIN
 #if  USING_COCOS2D_VERSION ==  COCOS2D_VERSION_1X
         virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
         LAYER_NODE_FUNC(Smaato)
-        void setCloseSprite(CCSprite* closeSprite);
-		void updateUI(char* target,CCSprite* imageSprite);
+#endif
+#if  USING_COCOS2D_VERSION ==  COCOS2D_VERSION_3X
+		virtual bool onTouchBegan(Touch *touch, Event *event);
+        CREATE_FUNC(Smaato);
+
+#endif
+        void setCloseSprite(ccSprite* closeSprite);
+		void updateUI(char* target,ccSprite* imageSprite);
 		void setBorderColor1(ccColor3B borderColor1);
 		void setBorderColor2(ccColor3B borderColor2);
-#endif
-
-#if  USING_COCOS2D_VERSION ==  COCOS2D_VERSION_3X
-        CREATE_FUNC(Smaato);
-        void setCloseSprite(Sprite* closeSprite);
-		void updateUI(char* target,Sprite* imageSprite);
-		void setBorderColor1(Color3B borderColor1);
-		void setBorderColor2(Color3B borderColor2);
-#endif
-
     protected:
         char* target;
-#if  USING_COCOS2D_VERSION ==  COCOS2D_VERSION_1X
-        CCSprite* sprite;
-        CCSprite *border;
-        CCSprite* closeSprite;
-        CCSprite *blackBorder;
+        ccSprite* sprite;
+        ccSprite *border;
+        ccSprite* closeSprite;
+        ccSprite *blackBorder;
         ccColor3B borderColor1;
         ccColor3B borderColor2;
-#endif
-#if  USING_COCOS2D_VERSION ==  COCOS2D_VERSION_3X
-        Sprite* sprite;
-        Sprite *border;
-        Sprite* closeSprite;
-        Sprite *blackBorder;
-        Color3B borderColor1;
-        Color3B borderColor2;
-#endif
         bool show;
         //_pSelector;      /// callback function, e.g. MyLaRef*                        _pTarget;        /// callback target of pSelector function
         //SEL_TargetLink           yer::onTargetLink(const char* target){navigator_invoke(target, 0);}

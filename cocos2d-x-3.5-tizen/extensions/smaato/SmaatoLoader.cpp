@@ -5,19 +5,19 @@
  *      Author: tungt
  */
 
-#include <extensions/smaato/SmaatoLoader.h>
+#include "extensions/smaato/SmaatoLoader.h"
 #if USING_COCOS2D_VERSION == COCOS2D_VERSION_1X
-#include <CCScheduler.h>
+#include "CCScheduler.h"
 #endif
 #if USING_COCOS2D_VERSION == COCOS2D_VERSION_3X
-#include <base/CCScheduler.h>
-#include <base/CCDirector.h>
+#include "base/CCScheduler.h"
+#include "base/CCDirector.h"
 #endif
 #include <vector>
 #include <stdio.h>
 #include <string>
 #include <string.h>
-#include <extensions/Gif/InstantGif.h>
+#include "extensions/Gif/InstantGif.h"
 
 
 NS_CC_BEGIN

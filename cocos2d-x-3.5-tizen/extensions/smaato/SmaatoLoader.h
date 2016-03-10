@@ -4,17 +4,17 @@
  *  Created on: Mar 7, 2016
  *      Author: tungt
  */
-#include <cocos2d.h>
-#include <extensions/smaato/Smaato.h>
+#include "cocos2d.h"
+#include "extensions/smaato/Smaato.h"
 #include <list>
 #include "extensions/HttpClientHelper.h"
 #include <string>
-#include <extensions/pugixml/pugixml.hpp>
+#include "extensions/pugixml/pugixml.hpp"
 
-#include <platform/CCImage.h>
+#include "platform/CCImage.h"
 #if USING_COCOS2D_VERSION == COCOS2D_VERSION_1X
-#include <CCTexture2D.h>
-#include <CCSprite.h>
+#include "CCTexture2D.h"
+#include "CCSprite.h"
 #endif
 #if USING_COCOS2D_VERSION == COCOS2D_VERSION_3X
 #include "renderer/CCTexture2D.h"
