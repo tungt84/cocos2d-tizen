@@ -19,7 +19,8 @@
 #endif
 
 
-
+#include <vector>
+#include <string>
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -49,10 +50,22 @@ public:
     virtual void scrollViewDidZoom(ccScrollView* view) ;
     virtual void onEnter();
     virtual void onExit();
+    virtual void setupUI();
+    void setBackgroundFile(const char* backgroundFile);
+    void addHelpFile(const char* helpFile);
+    void setShowPoint(bool showPoint);
+    void setActivedPointFile(const char* activedPointFile);
+    void setDisablePointFile(const char* disablePointFile);
 protected:
     void adjustScrollView(float offset);
 protected:
     int m_page;
+    char* m_backgroundFile;
+    char* m_activedPointFile;
+    char* m_disablePointFile;
+    bool m_showPoint;
+    std::vector<char*> helpFilesVector;
+    std::vector<ccSprite*> helpSpriteVector;
     ccSprite *bg;
     ccPoint touchPoint;
     ccScrollView *  scrollView;
