@@ -179,10 +179,31 @@ Particle3D/PU/CCPUBehaviourManager.cpp \
 Particle3D/PU/CCPUBehaviourTranslator.cpp \
 Particle3D/PU/CCPUSlaveBehaviour.cpp \
 Particle3D/PU/CCPUSlaveBehaviourTranslator.cpp \
+HttpClientHelper.cpp \
+pugixml/pugixml.cpp \
+Gif/gif_lib/dgif_lib.c \
+Gif/gif_lib/gif_err.c \
+Gif/gif_lib/gif_font.c \
+Gif/gif_lib/gif_hash.c \
+Gif/gif_lib/gifalloc.c \
+Gif/gif_lib/quantize.c \
+Gif/Bitmap.cpp \
+Gif/CacheGif.cpp \
+Gif/GifBase.cpp \
+Gif/GifMovie.cpp \
+Gif/InstantGif.cpp \
+Gif/Movie.cpp \
+smaato/Smaato.cpp \
+smaato/Smaato_android.cpp \
+smaato/SmaatoLoader.cpp \
+LoadingScreen/CCLoadingScreen.cpp \
+Guide/CCGuide.cpp \
+
 
 LOCAL_STATIC_LIBRARIES := cocos2dx_internal_static
 LOCAL_STATIC_LIBRARIES += cocos_curl_static
 LOCAL_STATIC_LIBRARIES += box2d_static
+LOCAL_STATIC_LIBRARIES += cocos_network_static
 
 LOCAL_CXXFLAGS += -fexceptions
 
