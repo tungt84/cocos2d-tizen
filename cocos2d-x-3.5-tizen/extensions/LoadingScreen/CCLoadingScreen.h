@@ -34,6 +34,9 @@ public:
     virtual void update(float dt);
     virtual void onEnter();
     virtual void onExit();
+    virtual void onWorking() {};
+    virtual bool isFinished() {return true;};
+    virtual void onFinish(){};
 protected:
     char* m_backgroundFile;
     char* m_progressbarBorderFile;
