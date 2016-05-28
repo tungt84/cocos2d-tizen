@@ -1,6 +1,10 @@
 #include "Bitmap.h"
 #include <stdio.h>
+#ifdef __APPLE__
+#include <stdlib.h>
+#else
 #include<malloc.h>
+#endif
 Bitmap::Bitmap()
 {
 	m_width = 0;
